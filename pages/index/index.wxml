@@ -1,0 +1,40 @@
+<view class="index-header">
+  <view class="search">
+    <t-search placeholder="搜索美食" bind:change="handleSubmit" bind:clear="handleClear" />
+  </view>
+  <view class="swiper">
+    <t-swiper current="{{current}}" autoplay="{{autoplay}}" duration="{{duration}}" interval="{{interval}}" navigation>
+      <t-swiper-item wx:for="{{swiperList}}" wx:key="index">
+        <image src="{{item.image}}" class="img" />
+      </t-swiper-item>
+    </t-swiper>
+  </view>
+</view>
+<view class="index-container">
+  <view class="title">校园美食</view>
+  <view class="filters">
+    <view class="filter {{filterId==0?'active':''}}" data-id="0" bindtap="tapFilter">默认排序
+    </view>
+    <view class="filter {{filterId==1?'active':''}}" data-id="1" bindtap="tapFilter">高分榜单
+    </view>
+    <view class="filter {{filterId==2?'active':''}}" data-id="2" bindtap="tapFilter">低价优先
+    </view>
+  </view>
+  <view class="dish" wx:for="{{display_dishes}}" wx:key="id">
+    <navigator url="/pages/dish/dish?id={{item.id}}" style="width: 100%; height: 100%">
+      <view class='dish-container'>
+        <view class='dish-img'>
+          <image src="{{item.indexImgUrl}}" style="height: 100%" />
+        </view>
+        <view class='dish-detail'>
+          <view class='dish-name'>{{item.name}}</view>
+          <view class='dish-data'>
+            <view class='dish-canteen-id'>位置：第 {{item.cid}} 食堂</view>
+            <view class='dish-price'>价格：人均 {{item.price}} 元</view>
+            <view class='dish-score'>评分：{{item.score}} / 5.0</view>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>

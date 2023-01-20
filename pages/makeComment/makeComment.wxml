@@ -1,0 +1,36 @@
+<view class="body">
+    <view class="top">
+        <button size="mini" class="publish-btn" bindtap="toPublish">发布</button>
+    </view>
+    
+
+    <view class="container">
+          <picker
+                class="picker"
+                mode="multiSelector" 
+                bindchange="bindMultiPickerChange" 
+                bindcolumnchange="bindMultiPickerColumnChange" 
+                value="{{multiIndex}}" 
+                range="{{multiArray}}">
+                <view class="picker-item">
+                    <view class="select" wx:if="{{ select }}">
+                        <text  class="select-text">{{multiArray[0][multiIndex[0]]}}.{{multiArray[1][multiIndex[1]]}} / 5.0 </text>
+                        <image class="select-icon" src="../../images/close.png" catchtap="closeSelect"></image>
+                    </view>
+    
+                    <view class="empty" wx:else>
+                        <text class="score">点击选择分数</text>
+
+                    </view>
+                </view>    
+            </picker>
+      
+        
+        <view class="desc">
+            <textarea  class="desc-text" value="{{ desc }}" bindinput="getDesc" placeholder="请写下你的评价" id="" cols="25"
+            rows="10"></textarea>
+          
+        </view>
+      
+    </view>
+</view>

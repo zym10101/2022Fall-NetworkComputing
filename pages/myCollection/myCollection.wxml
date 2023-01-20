@@ -1,0 +1,17 @@
+<view class="collect" wx:for="{{dishes}}" wx:key="id">
+   <navigator url="/pages/dish/dish?id={{item.id}}" style="width: 100%; height: 100%">
+        <view class='dish-container'>
+            <view class='dish-img'>
+                  <image src="{{item.indexImgUrl}}" style="width: 100%; height: 100%" />
+            </view>
+            <view class='dish-detail'>
+                  <view class='dish-name'>{{item.name}}</view>
+                  <view class='dish-data'>
+                    <view class='dish-canteen-id'>位置：第 {{item.cid}} 食堂</view>
+                    <view class='dish-price'>价格：人均 {{item.price}} 元</view>
+                    <view class='dish-score'>评分：{{item.score}} / 5.0</view>
+                  </view>
+            </view>
+        </view>    
+    </navigator>  
+</view>

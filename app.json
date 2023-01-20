@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/category/category",
+    "pages/home/home",
+    "pages/myInfo/myInfo",
+    "pages/myCollection/myCollection",
+    "pages/dish/dish",
+    "pages/makeComment/makeComment"
+  ],
+  "tabBar": {
+    "color": "#878787",
+    "selectedColor": "#000",
+    "borderStyle": "black",
+    "backgroundColor": "#fcfcfc",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "./images/index_out.png",
+        "selectedIconPath": "./images/index_in.png",
+        "text": "推荐"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "iconPath": "./images/category_out.png",
+        "selectedIconPath": "./images/category_in.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "./images/me_out.png",
+        "selectedIconPath": "./images/me_in.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "校园美食榜",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-search": "tdesign-miniprogram/search/search",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-swiper": "tdesign-miniprogram/swiper/swiper",
+    "t-swiper-item": "tdesign-miniprogram/swiper/swiper-item",
+    "t-swiper-nav": "tdesign-miniprogram/swiper/swiper-nav",
+    "t-tabs": "tdesign-miniprogram/tabs/tabs",
+    "t-tab-panel": "tdesign-miniprogram/tabs/tab-panel",
+    "t-toast": "tdesign-miniprogram/toast/toast",
+    "t-tab-bar": "tdesign-miniprogram/tab-bar/tab-bar",
+    "t-tab-bar-item": "tdesign-miniprogram/tab-bar/tab-bar-item"
+  }
+}

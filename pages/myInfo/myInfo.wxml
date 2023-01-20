@@ -1,0 +1,48 @@
+<view class="body">
+  <view class="info">
+    <view class="info-item">
+      <text>头像</text>
+      <image src="{{avatarUrl}}" class="avatarUrl"></image>
+    </view>
+
+    <view class="info-item">
+      <text>昵称</text>
+      <text>{{nickName}}</text>
+    </view>
+
+  <!-- 将联系方式更改为个性签名，但代码相关命名仍为phone相关 -->
+  <view class="info-item">
+            <text>个性签名</text>
+            <view class="phone-right">
+               <view class="edit" wx:if="{{ edit }}" >
+                <input 
+                class="edit-input" 
+                type="text" 
+                value="{{ phone }}"
+                bindinput="getPhone"
+                />
+                <image 
+                class="close-icon"  
+                wx:if="{{ phone.length > 0 }}" 
+                src="../../images/close.png"
+                bindtap="deletePhone"
+                ></image>
+               </view>
+               <view class="phone" wx:else >
+                   {{ _phone }}
+               </view>
+                <view class="edit-status">
+                    <image wx:if="{{ !edit }}" bindtap="toEdit"
+                    class="edit-icon" 
+                    src="../../images/phone.png"></image>
+                    <text wx:else bindtap="toEdit">取消</text>
+                </view>
+            </view>
+        </view>
+
+        <button 
+        wx:if="{{ edit }}" class="btn"
+        bindtap="saveChange"
+        >保存修改</button>
+        </view>
+</view>
